@@ -1,6 +1,6 @@
 # 
 
-❌ task 1
+✔️ task 1 Shewhart control charts
 
 ❌ task 2
 

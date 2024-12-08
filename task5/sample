@@ -1,0 +1,76 @@
+PlayerShip SpaceRanger {
+    shields 100
+    energy 500
+    fuel 1000
+    weapons [Laser_Cannon, Plasma_Torpedo, Quantum_Disruptor]
+    currency 5000
+    can Warp_Jump, Stealth_Mode, Move, Rotate_Left, Rotate_Right, Shoot, Trade
+}
+
+NPCShip InvaderShip {
+    shields 150
+    energy 300
+    fuel 1000
+    weapons [Laser_Cannon, Plasma_Torpedo, Quantum_Disruptor]
+    role Fighter
+    behavior Aggressive
+    can Warp_Jump, Stealth_Mode, Move, Rotate_Left, Rotate_Right, Shoot
+}
+
+NPCShip TraderShip {
+    shields 100
+    role Trader
+    behavior Neutral
+    can Trade
+}
+
+NPCShip GuardShip {
+    shields 150
+    energy 300
+    fuel 1000
+    role Guard
+    behavior Defensive
+    can Summon_Drones
+}
+
+NPCShip GuardDrone {
+    shields 50
+    energy 100
+    fuel 500
+    weapons [Laser_Cannon]
+    role Guard
+    behavior Aggressive
+    can Move, Rotate_Left, Rotate_Right, Shoot
+}
+
+game must check GameIsRunning, AnyValueIsNonNegative;
+
+Move includes StartCommand, MoveCommand;
+Shoot includes TargetCommand, SelectWeaponCommand, FireWeaponCommand;
+Trade includes PurchaseCommand, RestoreResourcesCommand;
+Rotate_Left includes RotateCommand;
+Rotate_Right includes RotateCommand;
+
+Move must check collision;
+Warp_Jump must check collision;
+
+Move must spend fuel 10;
+Move with Stealth_Mode must spend fuel 30;
+
+Shoot with Laser_Cannon must spend energy 5;
+Shoot with Plasma_Torpedo must spend energy 10;
+Shoot with Quantum_Disruptor must spend energy 15;
+
+damage from Laser_Cannon by 10 to shields;
+damage from Plasma_Torpedo by 25 to shields;
+damage from Quantum_Disruptor by 50 to energy;
+
+Summon_Drones must spend energy 50;
+Warp_Jump must spend energy 50, fuel 100;
+
+SpaceRanger can purchase shields at price 100 from TraderShip;
+SpaceRanger can purchase fuel at price 50 from TraderShip;
+Trade must spend currency;
+
+end_game when SpaceRanger shields == 0 or InvaderShip shields == 0 and GuardShip shields == 0;
+end_game when SpaceRanger fuel == 0 

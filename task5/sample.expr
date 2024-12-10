@@ -72,5 +72,4 @@ SpaceRanger can purchase shields at price 100 from TraderShip;
 SpaceRanger can purchase fuel at price 50 from TraderShip;
 Trade must spend currency;
 
-end_game when SpaceRanger shields == 0 or InvaderShip shields == 0 and GuardShip shields == 0;
-end_game when SpaceRanger fuel == 0 
+end_game when SpaceRanger shields == 0 or SpaceRanger fuel == 0 

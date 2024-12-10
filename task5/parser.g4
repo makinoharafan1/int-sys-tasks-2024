@@ -1,7 +1,7 @@
 parser grammar SpaceBattleParser;
 options { tokenVocab=SpaceBattleLexer; }
 
-program
+spacebattlegame
     : (statement)* EOF
     ;
 
@@ -81,4 +81,3 @@ conditionSequence
 conditionExpression
     : IDENTIFIER (SHIELDS | ENERGY | FUEL | CURRENCY) COMPARE NUMBER
     ;
-    

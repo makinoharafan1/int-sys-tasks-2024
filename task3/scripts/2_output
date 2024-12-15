@@ -1,0 +1,30 @@
+Assigned request from 3 to 7 to elevator 0 (current_floor: 1)
+elevator 0 moved up to floor 2
+elevator 0 moved up to floor 3
+elevator 0 opened doors on floor 3
+elevator 0 closed doors on floor 3
+elevator 0 moved up to floor 4
+elevator 0 moved up to floor 5
+elevator 0 moved up to floor 6
+elevator 0 moved up to floor 7
+elevator 0 opened doors on floor 7
+elevator 0 closed doors on floor 7
+
+Invalid request: floors must be between 1 and 10. Got: calling_floor=20, destination_floor=20
+
+Invalid request: floors must be between 1 and 10. Got: calling_floor=3, destination_floor=30
+
+Assigned request from 2 to 10 to elevator 1 (current_floor: 1)
+elevator 1 moved up to floor 2
+elevator 1 opened doors on floor 2
+elevator 1 closed doors on floor 2
+elevator 1 moved up to floor 3
+elevator 1 moved up to floor 4
+elevator 1 moved up to floor 5
+elevator 1 moved up to floor 6
+elevator 1 moved up to floor 7
+elevator 1 moved up to floor 8
+elevator 1 moved up to floor 9
+elevator 1 moved up to floor 10
+elevator 1 opened doors on floor 10
+elevator 1 closed doors on floor 10

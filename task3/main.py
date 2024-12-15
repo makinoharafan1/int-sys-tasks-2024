@@ -2,12 +2,13 @@ import argparse
 import ast
 
 from src.elevator import Elevator
+from src.elevator_manager import ElevatorManager
 
 
 parser = argparse.ArgumentParser()
 
 parser.add_argument(
-    "--n_floor",
+    "--n_floors",
     type=int,
     required=True
 )
@@ -26,12 +27,15 @@ parser.add_argument(
 
 args = parser.parse_args()
 
-n_floor, elevator_floors, requests = args.n_floor, ast.literal_eval(args.elevator_floors), ast.literal_eval(args.requests)
+n_floors = args.n_floors
+elevator_floors = ast.literal_eval(args.elevator_floors)
+requests = ast.literal_eval(args.requests)
 
 elevators = []
 
 for i in range(len(elevator_floors)):
     elevators.append(Elevator(id=i, current_floor=elevator_floors[i]))
 
-for elevator in elevators:
-    print(elevator._current_floor)
+manager = ElevatorManager(elevators, n_floors=n_floors)
+
+manager.process_all_requests(requests)

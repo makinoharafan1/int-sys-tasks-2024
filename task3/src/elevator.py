@@ -1,22 +1,21 @@
 class Elevator:
     def __init__(self, id: int, current_floor: int):
-        self._id = id
-        self._current_floor = current_floor
-        self._n_executed_commands = 0
-        self._executed_commands = []
+        self.id = id
+        self.current_floor = current_floor
 
-    @property
-    def current_floor(self):
-        return self._current_floor
-
-    def idle(self):
-        self._executed_commands.append()
+    def __repr__(self):
+        return f"elevator {self.id} (current_floor: {self.current_floor})"
     
-    # def move_up(self):
+    def move_up(self):
+        self.current_floor += 1
+        print(f"elevator {self.id} moved up to floor {self.current_floor}")
 
-    # def move_down(self):
+    def move_down(self):
+        self.current_floor -= 1
+        print(f"elevator {self.id} moved down to floor {self.current_floor}")
 
-    # def open_doors(self):
+    def open_doors(self):
+        print(f"elevator {self.id} opened doors on floor {self.current_floor}")
 
-    # def close_doors(self):
-
+    def close_doors(self):
+        print(f"elevator {self.id} closed doors on floor {self.current_floor}")

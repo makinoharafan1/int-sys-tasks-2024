@@ -7,4 +7,4 @@ cmp(4, 4)  ->  0  (stop)
 """
 
 def cmp(a, b):
-    return (a > b) - (a < b)
+    return (b > a) - (b < a)

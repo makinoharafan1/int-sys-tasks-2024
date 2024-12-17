@@ -1,0 +1,37 @@
+Rule 0     S -> program
+Rule 1     program -> expression
+Rule 2     expression -> assignment
+Rule 3     expression -> logical_expr
+Rule 4     assignment -> ID ASSIGN expression
+Rule 5     logical_expr -> logical_expr OR logical_term
+Rule 6     logical_expr -> logical_term
+Rule 7     logical_term -> logical_term AND logical_factor
+Rule 8     logical_term -> logical_factor
+Rule 9     logical_factor -> NOT logical_factor
+Rule 10    logical_factor -> relational_expr
+Rule 11    relational_expr -> relational_expr EQ additive_expr
+Rule 12    relational_expr -> relational_expr NEQ additive_expr
+Rule 13    relational_expr -> relational_expr LT additive_expr
+Rule 14    relational_expr -> relational_expr LE additive_expr
+Rule 15    relational_expr -> relational_expr GT additive_expr
+Rule 16    relational_expr -> relational_expr GE additive_expr
+Rule 17    relational_expr -> additive_expr
+Rule 18    additive_expr -> additive_expr PLUS multiplicative_expr
+Rule 19    additive_expr -> additive_expr MINUS multiplicative_expr
+Rule 20    additive_expr -> multiplicative_expr
+Rule 21    multiplicative_expr -> multiplicative_expr MUL unary_expr
+Rule 22    multiplicative_expr -> multiplicative_expr DIV unary_expr
+Rule 23    multiplicative_expr -> unary_expr
+Rule 24    unary_expr -> MINUS unary_expr
+Rule 25    unary_expr -> primary_expr
+Rule 26    primary_expr -> LPAREN expression RPAREN
+Rule 27    primary_expr -> ID
+Rule 28    primary_expr -> NUMBER
+Rule 29    primary_expr -> TRUE
+Rule 30    primary_expr -> FALSE
+Rule 31    primary_expr -> function_definition
+Rule 32    primary_expr -> function_call
+Rule 33    function_definition -> ID LPAREN argument_list RPAREN LBRACE expression RBRACE
+Rule 34    function_call -> ID LPAREN argument_list RPAREN
+Rule 35    argument_list -> argument_list COMMA expression
+Rule 36    argument_list -> expression

@@ -1,0 +1,47 @@
+Expression: x = 10
+Accepted!
+
+Expression: x = 10
+Accepted!
+
+Expression: a + b - c * d / e
+Accepted!
+
+Expression: ( x = 20 ) != ( y = 10 )
+Accepted!
+
+Expression: foo ( 10 , 20 )
+Accepted!
+
+Expression: function ( x , y ) { x + y }
+Accepted!
+
+Expression: foo ( bar ( 10 , 20 ) , baz ( 30 ) )
+Accepted!
+
+Expression: ( x + ( y - z ) ) * ( a / b )
+Accepted!
+
+Expression: function ( x , y ) { z = x + y }
+Accepted!
+
+Expression: x = 
+Parsing error!
+Unexpected symbol: $end
+Stack at error: [(0, ''), (5, 'ID'), (22, 'ASSIGN')]
+Remaining input: ['$end']
+Current state: 22
+
+Expression: x < 5 && y = 10
+Parsing error!
+Unexpected symbol: ASSIGN
+Stack at error: [(0, ''), (6, 'logical_term'), (24, 'AND'), (26, 'ID')]
+Remaining input: ['ASSIGN', 'NUMBER', '$end']
+Current state: 26
+
+Expression: x = > 10
+Parsing error!
+Unexpected symbol: GT
+Stack at error: [(0, ''), (5, 'ID'), (22, 'ASSIGN')]
+Remaining input: ['GT', 'NUMBER', '$end']
+Current state: 22

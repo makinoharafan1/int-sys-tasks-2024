@@ -1,4 +1,4 @@
-from parser import LR1Parser
+from analyzer import LR1Analyzer
 from tokenize import tokenize
 from ply_tables.const import action_table, goto_table, rules
 
@@ -21,7 +21,7 @@ test_expressions = [
     "x = > 10"
 ]
 
-parser = LR1Parser(action_table, goto_table, rules)
+parser = LR1Analyzer(action_table, goto_table, rules)
 
 for expr in test_expressions:
     print(f"Expression: {expr}")

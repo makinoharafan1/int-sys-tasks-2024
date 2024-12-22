@@ -31,6 +31,7 @@ Unexpected symbol: $end
 Stack at error: [(0, ''), (5, 'ID'), (22, 'ASSIGN')]
 Remaining input: ['$end']
 Current state: 22
+Expected symbols at state 22: ['ID', 'NOT', 'MINUS', 'LPAREN', 'NUMBER', 'TRUE', 'FALSE']
 
 Expression: x < 5 && y = 10
 Parsing error!
@@ -38,6 +39,7 @@ Unexpected symbol: ASSIGN
 Stack at error: [(0, ''), (6, 'logical_term'), (24, 'AND'), (26, 'ID')]
 Remaining input: ['ASSIGN', 'NUMBER', '$end']
 Current state: 26
+Expected symbols at state 26: ['MUL', 'DIV', 'PLUS', 'MINUS', 'EQ', 'NEQ', 'LT', 'LE', 'GT', 'GE', 'AND', 'OR', '$end', 'RPAREN', 'COMMA', 'RBRACE', 'LPAREN']
 
 Expression: x = > 10
 Parsing error!
@@ -45,3 +47,4 @@ Unexpected symbol: GT
 Stack at error: [(0, ''), (5, 'ID'), (22, 'ASSIGN')]
 Remaining input: ['GT', 'NUMBER', '$end']
 Current state: 22
+Expected symbols at state 22: ['ID', 'NOT', 'MINUS', 'LPAREN', 'NUMBER', 'TRUE', 'FALSE']

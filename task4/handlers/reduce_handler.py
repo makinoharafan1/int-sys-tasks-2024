@@ -1,7 +1,7 @@
-from states.state import ParserState
+from handlers.handler import Handler
 
 
-class ReduceState(ParserState):
+class ReduceHandler(Handler):
     def handle(self, parser, stack, input_tokens, action):
         rule_index = abs(int(action))
         lhs, rhs = parser.rules[rule_index]

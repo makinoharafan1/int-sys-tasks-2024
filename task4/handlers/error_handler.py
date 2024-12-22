@@ -1,7 +1,7 @@
-from states.state import ParserState
+from handlers.handler import Handler
 
 
-class ErrorState(ParserState):
+class ErrorHandler(Handler):
     def handle(self, parser, stack, input_tokens, action):
         lookahead = input_tokens[0]
         state = stack[-1][0]

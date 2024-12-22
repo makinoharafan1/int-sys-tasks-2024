@@ -1,7 +1,7 @@
-from states.state import ParserState
+from handlers.handler import Handler
 
 
-class AcceptState(ParserState):
+class AcceptHandler(Handler):
     def handle(self, parser, stack, input_tokens, action):
         print("Accepted!")
         parser.done = True

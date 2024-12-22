@@ -1,7 +1,7 @@
-from states.shift_state import ShiftState
-from states.reduce_state import ReduceState
-from states.accept_state import AcceptState
-from states.error_state import ErrorState
+from handlers.shift_handler import ShiftHandler
+from handlers.reduce_handler import ReduceHandler
+from handlers.accept_handler import AcceptHandler
+from handlers.error_handler import ErrorHandler
 
 
 class LR1Analyzer:
@@ -11,10 +11,10 @@ class LR1Analyzer:
         self.rules = rules
 
         self.action_dispatch = {
-             1: ShiftState(),
-            -1: ReduceState(),
-             0: AcceptState(),
-             None: ErrorState()
+             1: ShiftHandler(),
+            -1: ReduceHandler(),
+             0: AcceptHandler(),
+             None: ErrorHandler()
         }
 
     def get_state_handler(self, action):
